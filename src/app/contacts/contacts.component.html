@@ -1,0 +1,120 @@
+<div class="container-fluid myfont contact  " >
+     <div class="col-sm-12 text-right"> <a routerLink="/" routerLinkActive="active"> <h3><span style="color:white">Go Back</span></h3></a> 
+        </div>
+        
+<div class=col-sm-12>
+    <h1><span style="color:white">CONTACT US</span></h1>
+    
+</div>
+<div class=col-sm-4>
+    
+</div>
+<div class="col-sm-12 text-center regularmargin">
+    <img src="/images/contactus.jpg" class="centermode thumbnail myimage">
+</div>
+<div class=col-sm-3>
+    
+</div>
+
+<div class="col-sm-12 ">
+    
+    <h3> " Yomify is friendly and available to communicate with you. Get in touch anytime 
+    and  your inquiries will be promptly responded to. Thank you. "</h3>
+</div>
+<div class="col-sm-8 mform" *ngIf=!contactres>
+
+    <form #userForm="ngForm" (ngSubmit)="onsubmit()"  novalidate>
+ <div class="form-group" >
+      <label for="name"><span style="color:white">Name</span> </label>
+      <input minlength=6 class="form-control" type="text"  #nameRef="ngModel" name=name [(ngModel)]=myName  required>
+           <div *ngIf ="nameRef.errors && (nameRef.dirty||nameRef.touched)" id=myred>
+       <div [hidden]="!nameRef.errors.required">Please Enter a name </div>
+       <div [hidden]="!nameRef.errors.minlength">Please enter at least 6 characters </div>
+             </div>
+     </div>
+
+     <div class="form-group" >
+<label for=""><span style="color:white">Email</span> </label>
+<input #refEmail="ngModel" class="form-control" type="email" name=email [(ngModel)]=myEmail pattern="^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$"  required>
+ <div *ngIf ="refEmail.errors && (nameRef.dirty||nameRef.touched)" id=myred>
+       <div [hidden]="!refEmail.errors.pattern">Please Enter a valid Email address </div>
+       
+             </div>     
+</div>
+
+<div class="form-group" >
+      <label for="name"><span style="color:white">Subject</span> </label>
+      <input minlength=6 class="form-control" type="text"  #subjectRef="ngModel" name=name [(ngModel)]=mySubject  required>
+           <div *ngIf ="subjectRef.errors && (subjectRef.dirty||subjectRef.touched)" id=myred>
+       <div [hidden]="!subjectRef.errors.required">Please Enter a name </div>
+       <div [hidden]="!subjectRef.errors.minlength">Please enter at least 6 characters </div>
+             </div>
+     </div>
+   
+
+ <div class="form-group" >
+      <label for="name"><span style="color:white">Message</span> </label>
+      <textarea cols=80 rows=6 minlength=6 class="form-control" type="text"  #messageRef="ngModel" name=message [(ngModel)]=myMessage  required></textarea>
+           <div *ngIf ="messageRef.errors && (messageRef.dirty||messageRef.touched)" id=myred>
+       <div [hidden]="!messageRef.errors.required">Please Enter a name </div>
+       <div [hidden]="!messageRef.errors.minlength">Please enter at least 6 characters </div>
+             </div>
+     </div>
+
+  
+
+
+  <button [disabled]="!userForm.form.valid" type=submit class="btn btn-success btn-sm col-xs-4">Send</button>
+  
+
+   
+
+     </form>
+    
+    
+   
+       
+        
+   
+</div>
+
+<div class="col-sm-8 myres" *ngIf=contactres>
+   <h3> " Thank you for getting in touch with us. We will be in touch with you soon. "</h3>
+  </div>
+
+<div class="col-sm-4 ">
+    
+    <div class="col-xs-12 bottombigmargin ">
+        <div class=col-sm-12>
+        <h1>OUR LOCATION</h1>
+        </div>
+        <div clas=col-xs-12>
+        <div class=col-xs-8><h4>South Shore Drive Chicago</h4></div>
+  
+        <div class=col-xs-6><h4>IL 60649 USA.</h4></div>
+        </div>
+        
+    </div>
+    
+    
+    
+    
+         <div class=col-xs-12>
+        <h1>OPEN HOURS</h1>
+        </div>
+        <div class=col-xs-12>
+            <div class=col-xs-6> <h4>Mon - Sat</h4>  </div>
+           <div class=col-xs-6><h4>8 am - 6 pm</h4></div>
+           <div class=col-xs-6> <h4>Sunday </h4>  </div>
+           <div class=col-xs-6><h4>Closed</h4></div>
+           <div class=col-xs-6> <h4>Holidays</h4>  </div>
+           <div class=col-xs-6><h4>Closed</h4></div>
+   
+      </div>
+    
+
+
+
+
+</div>
+</div>
