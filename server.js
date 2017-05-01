@@ -70,7 +70,7 @@ app.post("/contact", function(req,res){
                                  email:email,
                                   message:message,
                                   subject:subject,
-                                  to:"abiodunadisa2020@gmail.com"
+                                  to:"your email"
                                 }, function (err) {
                                   if (err){res.send(err);console.log(err);
                                 }else { }})
